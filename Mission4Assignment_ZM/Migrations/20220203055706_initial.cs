@@ -24,7 +24,7 @@ namespace Mission4Assignment_ZM.Migrations
                 columns: table => new
                 {
                     Title = table.Column<string>(nullable: false),
-                    Year = table.Column<string>(nullable: false),
+                    Year = table.Column<int>(nullable: false),
                     Director = table.Column<string>(nullable: false),
                     Rating = table.Column<string>(nullable: false),
                     Edited = table.Column<bool>(nullable: false),
@@ -46,7 +46,7 @@ namespace Mission4Assignment_ZM.Migrations
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "CategoryId", "CategoryName" },
-                values: new object[] { 1, "Action" });
+                values: new object[] { 1, "Action/Adventure" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -61,27 +61,42 @@ namespace Mission4Assignment_ZM.Migrations
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "CategoryId", "CategoryName" },
-                values: new object[] { 4, "Drama" });
+                values: new object[] { 4, "Comedy" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "CategoryId", "CategoryName" },
-                values: new object[] { 5, "VHS" });
+                values: new object[] { 5, "Horror/Suspense" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "CategoryId", "CategoryName" },
+                values: new object[] { 6, "Miscellaneous" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "CategoryId", "CategoryName" },
+                values: new object[] { 7, "Television" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "CategoryId", "CategoryName" },
+                values: new object[] { 8, "VHS" });
 
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "Title", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Year" },
-                values: new object[] { "Inception", 1, "Christopher Nolan", false, "", "Best Movie EVER!", "PG-13", "2010" });
+                values: new object[] { "Inception", 1, "Christopher Nolan", false, "", "Best Movie EVER!", "PG-13", 2010 });
 
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "Title", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Year" },
-                values: new object[] { "Rudy", 2, "David Anspaugh", false, "", "Gave me chills", "PG-13", "1993" });
+                values: new object[] { "Rudy", 2, "David Anspaugh", false, "", "Gave me chills", "PG-13", 1993 });
 
             migrationBuilder.InsertData(
                 table: "Responses",
                 columns: new[] { "Title", "CategoryId", "Director", "Edited", "LentTo", "Notes", "Rating", "Year" },
-                values: new object[] { "The Lion King", 3, "Roger Allers", false, "", "SO inspirational", "G", "1994" });
+                values: new object[] { "The Lion King", 3, "Roger Allers", false, "", "SO inspirational", "G", 1994 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Responses_CategoryId",

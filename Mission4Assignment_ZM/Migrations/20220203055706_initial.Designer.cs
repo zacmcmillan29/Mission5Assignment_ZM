@@ -8,7 +8,7 @@ using Mission4Assignment_ZM.Models;
 namespace Mission4Assignment_ZM.Migrations
 {
     [DbContext(typeof(MovieAppContext))]
-    [Migration("20220203043723_initial")]
+    [Migration("20220203055706_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace Mission4Assignment_ZM.Migrations
                         new
                         {
                             CategoryId = 1,
-                            CategoryName = "Action"
+                            CategoryName = "Action/Adventure"
                         },
                         new
                         {
@@ -49,11 +49,26 @@ namespace Mission4Assignment_ZM.Migrations
                         new
                         {
                             CategoryId = 4,
-                            CategoryName = "Drama"
+                            CategoryName = "Comedy"
                         },
                         new
                         {
                             CategoryId = 5,
+                            CategoryName = "Horror/Suspense"
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            CategoryName = "Miscellaneous"
+                        },
+                        new
+                        {
+                            CategoryId = 7,
+                            CategoryName = "Television"
+                        },
+                        new
+                        {
+                            CategoryId = 8,
                             CategoryName = "VHS"
                         });
                 });
@@ -83,9 +98,8 @@ namespace Mission4Assignment_ZM.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Year")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Year")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Title");
 
@@ -103,7 +117,7 @@ namespace Mission4Assignment_ZM.Migrations
                             LentTo = "",
                             Notes = "Best Movie EVER!",
                             Rating = "PG-13",
-                            Year = "2010"
+                            Year = 2010
                         },
                         new
                         {
@@ -114,7 +128,7 @@ namespace Mission4Assignment_ZM.Migrations
                             LentTo = "",
                             Notes = "Gave me chills",
                             Rating = "PG-13",
-                            Year = "1993"
+                            Year = 1993
                         },
                         new
                         {
@@ -125,7 +139,7 @@ namespace Mission4Assignment_ZM.Migrations
                             LentTo = "",
                             Notes = "SO inspirational",
                             Rating = "G",
-                            Year = "1994"
+                            Year = 1994
                         });
                 });
 

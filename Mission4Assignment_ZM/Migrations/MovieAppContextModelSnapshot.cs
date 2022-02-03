@@ -32,7 +32,7 @@ namespace Mission4Assignment_ZM.Migrations
                         new
                         {
                             CategoryId = 1,
-                            CategoryName = "Action"
+                            CategoryName = "Action/Adventure"
                         },
                         new
                         {
@@ -47,11 +47,26 @@ namespace Mission4Assignment_ZM.Migrations
                         new
                         {
                             CategoryId = 4,
-                            CategoryName = "Drama"
+                            CategoryName = "Comedy"
                         },
                         new
                         {
                             CategoryId = 5,
+                            CategoryName = "Horror/Suspense"
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            CategoryName = "Miscellaneous"
+                        },
+                        new
+                        {
+                            CategoryId = 7,
+                            CategoryName = "Television"
+                        },
+                        new
+                        {
+                            CategoryId = 8,
                             CategoryName = "VHS"
                         });
                 });
