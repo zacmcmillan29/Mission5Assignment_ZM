@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "List of Movies";
+}
+
+@model List<MovieAdd>
+
+<table class="table table-bordered table-striped">
+    <thead class="font-weight-bold">
+        <tr>
+            @*These will be the columns that are filled out*@
+            <td>Edit</td>
+            <td>Movie Title</td>
+            <td>Year</td>
+            <td>Category</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>Edited</td>
+            <td>Lent to</td>
+            <td>Notes</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-movie="@x.Title">Edit</a></td>
+                <td>@x.Title</td>
+                <td>@x.Year</td>
+                <td>@x.Category.CategoryName</td>
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.Notes</td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-movieDelete="@x.Title">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

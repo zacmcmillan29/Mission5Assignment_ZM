@@ -1199,14 +1199,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/zacmcmillan/Library/Mobile Documents/com~apple~CloudDocs/IS junior core/WINTER 2022/IS 413/Mission4Assignment/Mission4Assignment_ZM/Mission4Assignment_ZM/Mission4Assignment_ZM.csproj",
+      "projectUniqueName": "/Users/zacmcmillan/Library/Mobile Documents/com~apple~CloudDocs/IS junior core/WINTER 2022/IS 413/Mission5Assignment_ZM/Mission5Assignment_ZM/Mission4Assignment_ZM/Mission4Assignment_ZM.csproj",
       "projectName": "Mission4Assignment_ZM",
-      "projectPath": "/Users/zacmcmillan/Library/Mobile Documents/com~apple~CloudDocs/IS junior core/WINTER 2022/IS 413/Mission4Assignment/Mission4Assignment_ZM/Mission4Assignment_ZM/Mission4Assignment_ZM.csproj",
+      "projectPath": "/Users/zacmcmillan/Library/Mobile Documents/com~apple~CloudDocs/IS junior core/WINTER 2022/IS 413/Mission5Assignment_ZM/Mission5Assignment_ZM/Mission4Assignment_ZM/Mission4Assignment_ZM.csproj",
       "packagesPath": "/Users/zacmcmillan/.nuget/packages/",
-      "outputPath": "/Users/zacmcmillan/Library/Mobile Documents/com~apple~CloudDocs/IS junior core/WINTER 2022/IS 413/Mission4Assignment/Mission4Assignment_ZM/Mission4Assignment_ZM/obj/",
+      "outputPath": "/Users/zacmcmillan/Library/Mobile Documents/com~apple~CloudDocs/IS junior core/WINTER 2022/IS 413/Mission5Assignment_ZM/Mission5Assignment_ZM/Mission4Assignment_ZM/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/zacmcmillan/.config/NuGet/NuGet.Config"
+        "/Users/zacmcmillan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

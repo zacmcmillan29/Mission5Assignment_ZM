@@ -13,17 +13,49 @@ namespace Mission4Assignment_ZM.Models
 
         //responses= data set (list of data from the database)
         public DbSet<MovieAdd> Responses { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
 
         //THIS IS FOR SEEDING
         protected override void OnModelCreating(ModelBuilder mb)
         {
+
+            //This is for the Hobbies table!
+            mb.Entity<Category>().HasData(
+                new Category
+                {
+                    CategoryId = 1,
+                    CategoryName = "Action"
+                },
+                new Category
+                {
+                    CategoryId = 2,
+                    CategoryName = "Drama"
+                },
+                new Category
+                {
+                    CategoryId = 3,
+                    CategoryName = "Family"
+                },
+                new Category
+                {
+                    CategoryId = 4,
+                    CategoryName = "Drama"
+                },
+                new Category
+                {
+                    CategoryId = 5,
+                    CategoryName = "VHS"
+                }
+            );
+
             // see if data doesn't exist
             mb.Entity<MovieAdd>().HasData(
                 new MovieAdd
                 {
                     Title = "Inception",
-                    Category = "Action",
-                    Year = "2010",
+                    CategoryId = 1,
+                    Year = 2010,
                     Director = "Christopher Nolan",
                     Rating = "PG-13",
                     Edited = false,
@@ -33,8 +65,8 @@ namespace Mission4Assignment_ZM.Models
                 new MovieAdd
                 {
                     Title = "Rudy",
-                    Category = "Drama",
-                    Year = "1993",
+                    CategoryId = 2,
+                    Year = 1993,
                     Director = "David Anspaugh",
                     Rating = "PG-13",
                     Edited = false,
@@ -44,8 +76,8 @@ namespace Mission4Assignment_ZM.Models
                 new MovieAdd
                 {
                     Title = "The Lion King",
-                    Category = "Family",
-                    Year = "1994",
+                    CategoryId = 3,
+                    Year = 1994,
                     Director = "Roger Allers",
                     Rating = "G",
                     Edited = false,

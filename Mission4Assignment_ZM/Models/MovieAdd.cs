@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission4Assignment_ZM.Models
 {
@@ -9,10 +10,9 @@ namespace Mission4Assignment_ZM.Models
         [Key]
         [Required]
         public string Title { get; set; }
-        [Required]
-        public string Category { get; set; }
-        [Required]
-        public string Year { get; set; }
+
+        [Required(ErrorMessage = "Enter a year like this - ####")]
+        public int Year { get; set; }
         [Required]
         public string Director { get; set; }
         [Required]
@@ -23,5 +23,11 @@ namespace Mission4Assignment_ZM.Models
         public string LentTo { get; set; }
         //something for 25 charcters
         public string Notes { get; set; }
+
+
+        //FK
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 }

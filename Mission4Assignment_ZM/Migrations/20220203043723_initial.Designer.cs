@@ -8,7 +8,7 @@ using Mission4Assignment_ZM.Models;
 namespace Mission4Assignment_ZM.Migrations
 {
     [DbContext(typeof(MovieAppContext))]
-    [Migration("20220127043929_initial")]
+    [Migration("20220203043723_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,14 +17,54 @@ namespace Mission4Assignment_ZM.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.22");
 
+            modelBuilder.Entity("Mission4Assignment_ZM.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            CategoryName = "Action"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            CategoryName = "Drama"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            CategoryName = "Family"
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            CategoryName = "Drama"
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            CategoryName = "VHS"
+                        });
+                });
+
             modelBuilder.Entity("Mission4Assignment_ZM.Models.MovieAdd", b =>
                 {
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Director")
                         .IsRequired()
@@ -49,13 +89,15 @@ namespace Mission4Assignment_ZM.Migrations
 
                     b.HasKey("Title");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Responses");
 
                     b.HasData(
                         new
                         {
                             Title = "Inception",
-                            Category = "Action",
+                            CategoryId = 1,
                             Director = "Christopher Nolan",
                             Edited = false,
                             LentTo = "",
@@ -66,7 +108,7 @@ namespace Mission4Assignment_ZM.Migrations
                         new
                         {
                             Title = "Rudy",
-                            Category = "Drama",
+                            CategoryId = 2,
                             Director = "David Anspaugh",
                             Edited = false,
                             LentTo = "",
@@ -77,7 +119,7 @@ namespace Mission4Assignment_ZM.Migrations
                         new
                         {
                             Title = "The Lion King",
-                            Category = "Family",
+                            CategoryId = 3,
                             Director = "Roger Allers",
                             Edited = false,
                             LentTo = "",
@@ -85,6 +127,15 @@ namespace Mission4Assignment_ZM.Migrations
                             Rating = "G",
                             Year = "1994"
                         });
+                });
+
+            modelBuilder.Entity("Mission4Assignment_ZM.Models.MovieAdd", b =>
+                {
+                    b.HasOne("Mission4Assignment_ZM.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
